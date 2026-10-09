@@ -1,0 +1,568 @@
+/* ==========================================================================
+   SkyFlow Component Styles — Deep Forest Green & Crisp White
+   ========================================================================== */
+
+/* Form Utilities */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--color-canvas);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--color-text-main);
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  background: var(--color-white);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.btn-primary-full {
+  width: 100%;
+  padding: 13px 20px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary-full:hover:not(:disabled) {
+  background: var(--color-primary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(6, 78, 59, 0.25);
+}
+
+.btn-primary-full:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn-spinner {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  border-top-color: #FFFFFF;
+  animation: spinLoader 0.75s linear infinite;
+  margin-right: 9px;
+  flex-shrink: 0;
+}
+
+@keyframes spinLoader {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   Flight Search Results Cards
+   ========================================================================== */
+.flight-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.flight-ticket-card {
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1.2fr;
+  align-items: center;
+  gap: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.flight-ticket-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.flight-airline-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.flight-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-accent-soft);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.flight-num {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.flight-aircraft {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* Route Timeline */
+.flight-timeline-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.timeline-point {
+  text-align: center;
+}
+
+.timeline-time {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+.timeline-city {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.timeline-path {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.timeline-line {
+  width: 100%;
+  height: 2px;
+  background: var(--color-border);
+  position: relative;
+}
+
+.timeline-line::after {
+  content: '✈';
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  color: var(--color-primary);
+  font-size: 12px;
+}
+
+.timeline-duration {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-accent-hover);
+}
+
+/* Fare & Booking Actions */
+.flight-pricing-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  padding-left: 20px;
+  border-left: 1px dashed var(--color-border);
+}
+
+.fare-price-display {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+.fare-price-currency {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.seat-status-pill {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.card-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.btn-price-hold {
+  padding: 8px 14px;
+  background: var(--color-warning-soft);
+  color: #92400E;
+  border: 1px solid #FDE68A;
+  border-radius: var(--radius-md);
+  font-size: 12.5px;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.btn-price-hold:hover {
+  background: #FEF08A;
+  border-color: #F59E0B;
+}
+
+.btn-select-flight {
+  padding: 10px 20px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.btn-select-flight:hover {
+  background: var(--color-primary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(6, 78, 59, 0.25);
+}
+
+/* ==========================================================================
+   AI Floating Chatbot
+   ========================================================================== */
+.ai-chat-bubble {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  z-index: 2500;
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 8px 24px rgba(6, 78, 59, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: bottom 0.28s cubic-bezier(0.22, 1, 0.36, 1), transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+  border: 2px solid var(--color-accent-light);
+  padding: 0;
+}
+
+.ai-chat-bubble:hover {
+  transform: scale(1.1) translateY(-2px);
+  background: var(--color-primary-light);
+  box-shadow: var(--shadow-glow);
+}
+
+.ai-bubble-icon {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.ai-chat-window {
+  position: fixed;
+  bottom: 84px;
+  right: 24px;
+  width: 380px;
+  height: 520px;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 50px rgba(6, 78, 59, 0.25);
+  border: 1px solid var(--color-border-green);
+  z-index: 2500;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  transition: bottom 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ai-chat-window.active {
+  display: flex;
+}
+
+.ai-chat-header {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ai-chat-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ai-status-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--color-accent);
+}
+
+.ai-chat-title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.ai-chat-status {
+  font-size: 11px;
+  color: var(--color-accent-light);
+}
+
+.ai-chat-close-btn {
+  background: transparent;
+  color: var(--color-white);
+  font-size: 18px;
+}
+
+.ai-chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--color-canvas);
+}
+
+.ai-msg {
+  max-width: 85%;
+  padding: 12px 16px;
+  border-radius: var(--radius-lg);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.ai-msg-bot {
+  background: var(--color-white);
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border);
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+
+.ai-msg-user {
+  background: var(--color-primary);
+  color: var(--color-white);
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+
+.ai-chat-input-bar {
+  padding: 12px 16px;
+  background: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-chat-input-bar input {
+  flex: 1;
+  padding: 8px 12px;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+}
+
+.ai-btn-send {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  transition: all var(--transition-fast);
+}
+
+.ai-btn-send:hover {
+  background: var(--color-accent);
+}
+
+/* ==========================================================================
+   Responsive Component Adaptations (Cards, AI Chat, Modals)
+   ========================================================================== */
+@media (max-width: 860px) {
+  .flight-ticket-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .flight-pricing-box {
+    border-left: none;
+    border-top: 1px dashed var(--color-border);
+    padding-left: 0;
+    padding-top: 14px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .card-actions-group {
+    width: auto;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 600px) {
+  .flight-ticket-card {
+    padding: 16px 14px;
+    gap: 14px;
+  }
+
+  .flight-airline-info {
+    gap: 12px;
+  }
+
+  .flight-icon-box {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .flight-num {
+    font-size: 16px;
+  }
+
+  .flight-pricing-box {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .card-actions-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .btn-select-flight, .btn-price-hold {
+    width: 100%;
+    text-align: center;
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .ai-chat-bubble {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .ai-bubble-icon {
+    font-size: 22px;
+  }
+
+  .ai-chat-window {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    max-width: 100vw;
+    height: 85vh;
+    border-radius: 20px 20px 0 0;
+    border: none;
+    border-top: 2px solid var(--color-accent);
+    box-shadow: 0 -10px 40px rgba(6, 78, 59, 0.3);
+    z-index: 3500;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-time {
+    font-size: 17px;
+  }
+
+  .timeline-city {
+    font-size: 11px;
+  }
+
+  .timeline-duration {
+    font-size: 10px;
+  }
+}
+
+/* Global Button Spinner & Loading States */
+.btn-spinner {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2.2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: btnSpin 0.6s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.btn-spinner.dark {
+  border: 2.2px solid rgba(6, 78, 59, 0.2);
+  border-top-color: var(--color-primary);
+}
+
+@keyframes btnSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.btn-loading {
+  pointer-events: none !important;
+  opacity: 0.82 !important;
+  cursor: wait !important;
+}

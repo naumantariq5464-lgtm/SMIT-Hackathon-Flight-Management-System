@@ -1,0 +1,250 @@
+/* ==========================================================================
+   SkyFlow Aircraft Seat Map & Live Selection Styles
+   ========================================================================== */
+
+.seatmap-container {
+  max-width: 960px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--color-border);
+  padding: 30px;
+  box-shadow: var(--shadow-md);
+}
+
+.seatmap-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.seatmap-flight-summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* 10-Minute Seat Hold Countdown Banner */
+.hold-timer-card {
+  background: var(--color-warning-soft);
+  border: 1px solid #FDE68A;
+  border-radius: var(--radius-lg);
+  padding: 14px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #92400E;
+}
+
+.timer-countdown-clock {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: #B45309;
+}
+
+/* Legend */
+.seat-legend-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 30px;
+  padding: 12px;
+  background: var(--color-canvas);
+  border-radius: var(--radius-full);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.legend-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.legend-available {
+  background: var(--color-white);
+  border: 1.5px solid var(--color-accent);
+}
+
+.legend-selected {
+  background: var(--color-primary);
+  border: 1.5px solid var(--color-primary-dark);
+}
+
+.legend-booked {
+  background: #CBD5E1;
+  border: 1.5px solid #94A3B8;
+}
+
+.legend-held {
+  background: #FEF08A;
+  border: 1.5px solid #F59E0B;
+}
+
+/* Aircraft Cabin Fuselage Layout */
+.aircraft-cabin-wrapper {
+  max-width: 540px;
+  margin: 0 auto 30px;
+  background: var(--color-canvas);
+  border-radius: 60px 60px 20px 20px;
+  padding: 40px 30px 30px;
+  border: 2px solid var(--color-border);
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.cabin-cockpit-nose {
+  width: 80px;
+  height: 30px;
+  background: var(--color-border);
+  border-radius: 20px 20px 0 0;
+  margin: -40px auto 20px;
+}
+
+.cabin-class-section {
+  margin-bottom: 24px;
+}
+
+.cabin-section-title {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  padding: 4px 10px;
+  background: var(--color-accent-soft);
+  border-radius: var(--radius-full);
+  display: inline-block;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.seat-grid-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.aisle-gap {
+  width: 24px;
+}
+
+.seat-btn {
+  width: 38px;
+  height: 42px;
+  border-radius: 6px 6px 2px 2px;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.seat-btn:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  transform: scale(1.08);
+}
+
+.seat-btn.selected {
+  background: var(--color-primary) !important;
+  color: var(--color-white) !important;
+  border-color: var(--color-primary-dark) !important;
+  box-shadow: 0 0 10px rgba(6, 78, 59, 0.4);
+}
+
+.seat-btn:disabled {
+  background: #E2E8F0;
+  color: #94A3B8;
+  border-color: #CBD5E1;
+  cursor: not-allowed;
+}
+
+/* Booking Checkout Dock */
+.checkout-dock {
+  background: var(--color-canvas);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   Seat Map Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 768px) {
+  .seatmap-container {
+    padding: 20px 14px;
+    border-radius: var(--radius-lg);
+  }
+
+  .seatmap-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .seat-legend-bar {
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    border-radius: var(--radius-lg);
+    padding: 14px;
+  }
+
+  .aircraft-cabin-wrapper {
+    max-width: 100%;
+    padding: 30px 12px 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .checkout-dock {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .checkout-dock .btn-primary-full {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .seat-btn {
+    width: 32px;
+    height: 38px;
+    font-size: 10px;
+  }
+
+  .aisle-gap {
+    width: 14px;
+  }
+
+  .seat-grid-row {
+    gap: 4px;
+  }
+}
